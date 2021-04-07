@@ -1,0 +1,63 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.header {
+  @include flex-column(flex-start, center);
+  width: 100%;
+  background-color: $light-gray;
+}
+
+.header__wrapper {
+  @include flex-row(space-between, center);
+  width: 100%;
+  max-width: $desktop;
+  padding-left: 20px;
+}
+
+.header__logo {
+  @include flex-row(flex-start, center);
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  &_svg {
+    margin-right: 20px;
+  }
+}
+
+.header__list {
+  @include list-reset;
+  @include flex-row(flex-end, flex-start);
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+}
+
+.header__item {
+  margin-left: 68px;
+  padding-top: 30px;
+
+  &--active,
+  &:hover {
+    position: relative;
+
+    &::before {
+      @include pseudo;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $dark;
+    }
+  }
+
+  a {
+    @include text-semibold-16;
+    color: $dark;
+  }
+}
+
+@media (max-width: calc(#{$desktop} + 30px) ) {
+
+  .header__list {
+    margin-right: 10px;
+  }
+}

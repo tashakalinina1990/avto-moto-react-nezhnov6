@@ -1,0 +1,11 @@
+@import "../../scss/mixins";
+
+.cars-page {
+  width: 100%;
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
